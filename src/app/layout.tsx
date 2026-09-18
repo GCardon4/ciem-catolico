@@ -14,9 +14,9 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Ciem Santa Hildegarda | Bisutería Católica",
+  title: "Ciem Santa Hildegarda | Centro Católico Integral de Espiritualidad y Medicina",
   description:
-    "Bisutería y joyería católica elaborada con devoción: medallas, rosarios y cruces inspirados en la tradición monástica de Santa Hildegarda.",
+    "Centro Católico Integral de Espiritualidad y Medicina. Bisutería católica elaborada con devoción: medallas, rosarios y cruces inspirados en la tradición monástica de Santa Hildegarda.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

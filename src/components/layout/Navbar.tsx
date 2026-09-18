@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const enlacesNavegacion = [
@@ -19,11 +20,21 @@ export default function Navbar() {
     <nav className="bg-surface border-b border-outline-variant/20 sticky top-0 z-50">
       <div className="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-(--container-max) mx-auto">
         <Link href="#inicio" className="flex items-center gap-3">
-          <span className="h-11 w-11 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-display text-lg">
-            ✝
-          </span>
-          <span className="font-display text-xl text-primary uppercase tracking-wide hidden sm:block">
-            Ciem Santa Hildegarda
+          <Image
+            src="/logotipo.svg"
+            alt="Logotipo Ciem Santa Hildegarda"
+            width={44}
+            height={51}
+            className="h-11 w-auto"
+            priority
+          />
+          <span className="hidden sm:flex flex-col leading-tight">
+            <span className="font-display text-xl text-primary uppercase tracking-wide">
+              Ciem Santa Hildegarda
+            </span>
+            <span className="text-[11px] text-on-surface-variant tracking-wide">
+              Centro Católico Integral de Espiritualidad y Medicina
+            </span>
           </span>
         </Link>
 

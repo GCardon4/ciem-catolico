@@ -1,5 +1,5 @@
 # Descripción del Proyecto
-Proyecto creado en Next.js con una estructura robusta para crear una página adecuada para venta de productos, con el carrito completo y gestion de pedidos por medio del dashboard
+CIEM Santa Hildegarda Centro Católico Integral de Espiritualidad y Medicina  es un proyecto creado en Next.js con una estructura robusta para crear una página adecuada para venta de productos, especialmente bisutería católica, con el carrito completo y gestion de pedidos por medio del dashboard
 
 El diseño es claro y muy adecuado a la imagen corporativa de la empresa
 

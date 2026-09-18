@@ -11,6 +11,9 @@ export default function Footer() {
             Ciem Santa Hildegarda
           </span>
           <p className="text-sm text-on-surface-variant max-w-xs">
+            Centro Católico Integral de Espiritualidad y Medicina.
+          </p>
+          <p className="text-sm text-on-surface-variant max-w-xs mt-1">
             © {anioActual} Ciem Santa Hildegarda. Sabiduría antigua, fe viva.
           </p>
         </div>

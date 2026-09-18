@@ -9,6 +9,7 @@ export const obtenerCatalogoDestacado = (): Product[] => [
     precio: 45,
     categoria: "Medallas",
     etiqueta: "Plata 925",
+    imagen: "/images/image-01.jpg",
   },
   {
     id: "rosario-olivo",
@@ -16,6 +17,7 @@ export const obtenerCatalogoDestacado = (): Product[] => [
     descripcion: "Cuentas talladas a mano en auténtica madera de olivo de Tierra Santa.",
     precio: 32,
     categoria: "Rosarios",
+    imagen: "/images/image-03.jpg",
   },
   {
     id: "cruz-minimalista",

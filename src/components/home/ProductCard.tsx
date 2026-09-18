@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import { generarEnlaceWhatsapp } from "@/lib/whatsapp";
 import type { Product } from "@/types/product";
@@ -13,12 +14,22 @@ export default function ProductCard({ producto }: ProductCardProps) {
 
   return (
     <article className="bg-surface-container-lowest rounded-2xl border border-secondary/20 overflow-hidden flex flex-col group hover:shadow-lg transition-shadow duration-300">
-      <div className="relative">
-        <PlaceholderImage
-          icono="✝"
-          etiqueta={producto.categoria}
-          className="aspect-square"
-        />
+      <div className="relative aspect-square">
+        {producto.imagen ? (
+          <Image
+            src={producto.imagen}
+            alt={producto.nombre}
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <PlaceholderImage
+            icono="✝"
+            etiqueta={producto.categoria}
+            className="absolute inset-0"
+          />
+        )}
         {producto.etiqueta && (
           <span className="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-semibold">
             {producto.etiqueta}

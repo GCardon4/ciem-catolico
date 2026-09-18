@@ -1,4 +1,4 @@
-import PlaceholderImage from "@/components/ui/PlaceholderImage";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -35,11 +35,16 @@ export default function Hero() {
           </div>
         </div>
 
-        <PlaceholderImage
-          icono="📿"
-          etiqueta="Fotografía de bisutería católica (próximamente)"
-          className="aspect-4/3 rounded-2xl border border-outline-variant/30"
-        />
+        <div className="relative aspect-4/3 rounded-2xl overflow-hidden border border-outline-variant/30">
+          <Image
+            src="/images/image-02.jpg"
+            alt="Artesana elaborando bisutería católica a mano"
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
       </div>
     </section>
   );
