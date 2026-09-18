@@ -1,0 +1,320 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CIEM Santa Hildegarda - Inicio</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dcd9d9",
+                    "outline": "#717971",
+                    "tertiary": "#2d2a1e",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-tertiary-container": "#b1ac9b",
+                    "surface": "#fcf9f8",
+                    "background": "#fcf9f8",
+                    "surface-container-high": "#eae7e7",
+                    "inverse-primary": "#a0d2ab",
+                    "on-surface-variant": "#414942",
+                    "secondary-container": "#fcd57d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c1c9bf",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary-container": "#775b0b",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#251a00",
+                    "inverse-on-surface": "#f3f0ef",
+                    "secondary": "#765a0b",
+                    "tertiary-container": "#434033",
+                    "primary-container": "#1b492c",
+                    "on-primary-fixed": "#00210e",
+                    "surface-container": "#f0eded",
+                    "on-tertiary-fixed": "#1e1c10",
+                    "on-tertiary-fixed-variant": "#4a4739",
+                    "surface-tint": "#3a6848",
+                    "on-primary-container": "#87b892",
+                    "primary-fixed": "#bcefc6",
+                    "secondary-fixed-dim": "#e7c26c",
+                    "inverse-surface": "#303030",
+                    "primary": "#003218",
+                    "tertiary-fixed-dim": "#ccc6b4",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#fcf9f8",
+                    "on-surface": "#1b1c1c",
+                    "on-background": "#1b1c1c",
+                    "primary-fixed-dim": "#a0d2ab",
+                    "tertiary-fixed": "#e9e2d0",
+                    "secondary-fixed": "#ffdf9a",
+                    "on-secondary-fixed-variant": "#5a4300",
+                    "surface-variant": "#e4e2e1",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#225032"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "caption": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(210, 174, 90, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Navigation Shell: TopNavBar -->
+<nav class="bg-surface dark:bg-surface-container-low text-primary dark:text-primary-fixed border-b border-outline-variant/10 dark:border-outline/20 sticky top-0 z-50">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="flex items-center gap-4">
+<img alt="CIEM Santa Hildegarda Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDABWNWg3IlzMYRtkluunIa7J6y2aDClp4J07sFoEfhpDrNIPv7v8N-JlZqH9sQrZM33p_K05OQKeuJ716iQQ8jCZF-EXoVwKzQtUxOlqfur0vZ1xam6uDIbe6d9HAMZ4m_Z3ehUiC0xMH50zj2hoSrmQjwUcDt1MXwJCdW_6RQfZgzsBoIKgKVZ2ucJOixVZ-ODGflABTRLlfZ6i5bnpLcp2o3X7FNMwX2By8wPIyOFbZZG5G6VHmkwjoLWHRE8p1JTg">
+<span class="font-display-lg-mobile md:font-display-lg text-headline-sm text-primary dark:text-primary-fixed uppercase tracking-wider hidden sm:block">CIEM Santa Hildegarda</span>
+</div>
+<!-- Links (Desktop) -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary pb-1 transition-colors duration-300" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#our-story">Our Story</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#jewelry">Jewelry</a>
+<a class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#events">Events</a>
+</div>
+<!-- Trailing Action -->
+<button class="hidden md:flex items-center gap-2 bg-primary-container text-on-primary-container hover:bg-surface-tint px-6 py-2 rounded font-label-md transition-all scale-95 duration-150 ease-in-out hover:scale-100">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                WhatsApp Catalog
+            </button>
+<!-- Mobile Menu Toggle (Visual only) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-90" data-alt="A serene and elegant architectural space inspired by medieval monastic design, featuring high vaulted ceilings, soft golden sunlight streaming through stained glass windows, and lush green medicinal herbs in terracotta pots. The mood is spiritual, peaceful, and elevated, using a palette of pure whites, deep greens, and ochre gold. Contemporary minimalist with traditional accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoM9jzLebVnW_h8FCU5YFysGXhkx5jFTqn8TaXlP1KRMWunUrl_uNqpY6fWCZkXjDuQEbPXMqcUJe56ck7tMFnZg6N5EByTzLDrFTDw_8YwE7oBj-zqha9XpK-FcwqNVlf3SgGwN6rl5FjWazxedwANP7uOWwJdqZA8oBY5qvf4bWfhkzErFlpdIqaMZiVRporQKsQrEwYXFtSAZVgqqB3ama22UfUXPKiQHHmJQS8XCYuUOB1b6SP')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24">
+<div class="max-w-2xl">
+<span class="font-label-md text-secondary tracking-widest uppercase mb-4 block">Sabiduría Antigua, Bienestar Moderno</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-primary mb-6">CIEM Santa Hildegarda:<br>Espiritualidad y Medicina</h1>
+<p class="font-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Encontramos el equilibrio perfecto entre la tradición monástica y la excelencia clínica contemporánea. Un espacio sagrado dedicado a la sanación integral del cuerpo y el espíritu.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary-container text-on-primary hover:bg-surface-tint px-8 py-3 rounded font-label-md transition-colors shadow-[0px_10px_30px_rgba(27,73,44,0.08)]" href="#jewelry">
+                            Explorar Colección
+                        </a>
+<a class="border border-secondary text-secondary hover:bg-secondary/5 px-8 py-3 rounded font-label-md transition-colors" href="#our-story">
+                            Conocer Más
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Story & Mission Section (Bento Grid) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="our-story">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-primary mb-4">Nuestra Esencia</h2>
+<div class="w-16 h-0.5 bg-secondary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Historia -->
+<div class="md:col-span-8 bg-surface rounded-xl p-8 border border-outline-variant/10 shadow-[0px_10px_30px_rgba(27,73,44,0.03)] flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 opacity-5">
+<span class="material-symbols-outlined text-[200px]">auto_stories</span>
+</div>
+<h3 class="font-headline-sm text-primary mb-4 relative z-10">El Legado de Santa Hildegarda</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed relative z-10">
+                            Inspirados por las enseñanzas de Santa Hildegarda de Bingen, doctora de la Iglesia y pionera en la medicina natural, nuestro centro une la profunda espiritualidad católica con prácticas de bienestar fundamentadas. Creemos en la <em>viriditas</em>, la fuerza vital verde y sanadora otorgada por Dios, que fluye a través de la naturaleza y nos guía hacia una salud integral.
+                        </p>
+</div>
+<!-- Misión -->
+<div class="md:col-span-4 bg-primary-container text-on-primary-container rounded-xl p-8 flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-secondary-fixed">favorite</span>
+</div>
+<h3 class="font-headline-sm text-on-primary">Misión</h3>
+<p class="font-body-md text-on-primary-container/90">
+                            Brindar sanación holística a través de la integración de la medicina natural hildegardiana y el acompañamiento espiritual, elevando la calidad de vida de nuestra comunidad.
+                        </p>
+</div>
+<!-- Visión -->
+<div class="md:col-span-4 bg-surface rounded-xl p-8 border border-outline-variant/10 shadow-[0px_10px_30px_rgba(27,73,44,0.03)] flex flex-col gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary">visibility</span>
+</div>
+<h3 class="font-headline-sm text-primary">Visión</h3>
+<p class="font-body-md text-on-surface-variant">
+                            Ser el faro de luz en medicina integrativa católica, reconocidos por nuestra compasión, excelencia clínica y devoción a la sabiduría sagrada.
+                        </p>
+</div>
+<!-- Valores -->
+<div class="md:col-span-8 bg-surface rounded-xl p-8 border border-outline-variant/10 shadow-[0px_10px_30px_rgba(27,73,44,0.03)]">
+<h3 class="font-headline-sm text-primary mb-6">Nuestros Pilares</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">local_florist</span>
+<div>
+<h4 class="font-label-md text-primary mb-1">Naturaleza</h4>
+<p class="font-caption text-on-surface-variant">Remedios puros y sagrados.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">menu_book</span>
+<div>
+<h4 class="font-label-md text-primary mb-1">Sabiduría</h4>
+<p class="font-caption text-on-surface-variant">Conocimiento ancestral.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary">volunteer_activism</span>
+<div>
+<h4 class="font-label-md text-primary mb-1">Compasión</h4>
+<p class="font-caption text-on-surface-variant">Cuidado centrado en el alma.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Jewelry Section (Glassmorphism Cards) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative" id="jewelry">
+<!-- Subtle background accent -->
+<div class="absolute inset-0 bg-surface-bright z-0"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<span class="font-label-md text-secondary tracking-widest uppercase mb-2 block">Artesanía Sagrada</span>
+<h2 class="font-headline-md text-primary mb-4">Bisutería Destacada</h2>
+<p class="font-body-md text-on-surface-variant">Piezas únicas elaboradas con devoción, diseñadas para acompañar tu vida espiritual con elegancia y significado profundo.</p>
+</div>
+<a class="font-label-md text-primary hover:text-secondary flex items-center gap-1 transition-colors group" href="#">
+                        Ver Catálogo Completo 
+                        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/10 rounded-xl overflow-hidden hover:shadow-[0px_10px_30px_rgba(27,73,44,0.08)] transition-all duration-300">
+<div class="aspect-[4/5] relative overflow-hidden bg-surface-container-low p-6 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A beautifully crafted silver Catholic crucifix pendant with subtle gold accents, resting on a textured linen surface bathed in soft, warm natural light. The style is premium product photography, elegant, minimalist, and reverent, emphasizing the fine details of the craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQdWlsWPX6IWgyJO6NNzWR1lYsqr06iz3t3U7R6Dq_huype9F4X2-sISJZrcJYoSHUF6roP3ToLmW-j48nFAFUg65Lkubs2K0u387p7NynbtDwiUMyOAATVBd1P6FIroIzq90pPNge4SsbSdiFUtjf1G2jCIX1ef2ilqt50syRqWEo0T7BKsNeRrr7dS2j7Ji8zc-yolKw1LSvNI9n2UqUcMI183fqfPUyTIKocS6OJKf_bmN3bw8N">
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-primary mb-2">Cruz de San Benito Clásica</h3>
+<p class="font-label-md text-on-surface-variant mb-4">$45.00 USD</p>
+<button class="w-full border border-secondary text-secondary hover:bg-secondary/5 py-2 rounded font-label-md transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                Añadir al Carrito
+                            </button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/10 rounded-xl overflow-hidden hover:shadow-[0px_10px_30px_rgba(27,73,44,0.08)] transition-all duration-300">
+<div class="aspect-[4/5] relative overflow-hidden bg-surface-container-low p-6 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A delicate and elegant Rosary made of deep green polished stones and gold links, draped artfully on a pristine white marble surface. Soft, divine lighting highlights the golden crucifix. The style is luxurious, serene, and spiritually uplifting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrcAIZyVNMgjY-_y57wchmws1ZsFWrt3gDUqX3UlzZ1sLonfsSV9UPu4yFZTYjVuQrCFXe3L83ZBD2LV-QFI_QvKIbzw0B2LYyaegt-Eo6Xaivi-_E2dUcFocB-QQKJCiAG6HcGhIVm-DPqvn2t7UlBSldA4p3mu8tZIkZY58vVNHoh8WpgOR9cOsEzU8R18bJ8i_hiIoLYFgXAnbsm2Z229y0Y_CDDrkj66HHQCBlaJTWS3IiTe4G">
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-primary mb-2">Rosario de Ágata Verde</h3>
+<p class="font-label-md text-on-surface-variant mb-4">$85.00 USD</p>
+<button class="w-full border border-secondary text-secondary hover:bg-secondary/5 py-2 rounded font-label-md transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                Añadir al Carrito
+                            </button>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/10 rounded-xl overflow-hidden hover:shadow-[0px_10px_30px_rgba(27,73,44,0.08)] transition-all duration-300">
+<div class="aspect-[4/5] relative overflow-hidden bg-surface-container-low p-6 flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A finely detailed gold Miraculous Medal pendant, shown in close-up against a soft cream background. The lighting is ethereal, creating soft highlights on the gold surface. The aesthetic is premium, timeless, and deeply faithful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3kbGqQwW3GwIYftvFsewW6Fg1B3YU62xGlvSFH-BSDet8HuWBpZ2cbJlxYn1VH7ayLW8CWsMvQWeHQZAH4FU2M6LQEkFwQjVOJHQtYoZCXD0GzFC30fm8Qqzvr-xhjNnJ2C3EsXFRGSr1cj_CRSz7RXwgXlluK46OhYKTRUe-Db2F_lKhlxv8sRbqWMXJQe7eI5iQkFKsNRM3l11_vReog_anTp1B3ZFRrbjYuXkhitAwpUeLSKJS">
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-primary mb-2">Medalla Milagrosa Oro</h3>
+<p class="font-label-md text-on-surface-variant mb-4">$60.00 USD</p>
+<button class="w-full border border-secondary text-secondary hover:bg-secondary/5 py-2 rounded font-label-md transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                                Añadir al Carrito
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating WhatsApp Button -->
+<a aria-label="Contactar por WhatsApp" class="fixed bottom-8 right-8 z-50 bg-primary-container text-on-primary-container w-14 h-14 rounded-full flex items-center justify-center shadow-[0px_10px_30px_rgba(27,73,44,0.3)] hover:scale-110 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined text-[28px]">forum</span>
+</a>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full py-12 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto mt-auto">
+<div>
+<span class="font-display-lg text-headline-sm text-primary dark:text-primary-fixed-dim mb-4 block">CIEM Santa Hildegarda</span>
+<p class="font-body-md text-caption text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                © 2024 CIEM Santa Hildegarda. Ancient Wisdom, Modern Wellness.
+            </p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-caption text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+<a class="font-body-md text-caption text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors underline-offset-4 hover:underline" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-caption text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors underline-offset-4 hover:underline" href="#">Contact Support</a>
+<a class="font-body-md text-caption text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors underline-offset-4 hover:underline" href="#">Location</a>
+</div>
+</footer>
+
+
+</body></html>

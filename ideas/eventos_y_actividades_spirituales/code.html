@@ -1,0 +1,240 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Eventos - CIEM Santa Hildegarda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#dcd9d9",
+                        "outline": "#717971",
+                        "tertiary": "#2d2a1e",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-container": "#b1ac9b",
+                        "surface": "#fcf9f8",
+                        "background": "#fcf9f8",
+                        "surface-container-high": "#eae7e7",
+                        "inverse-primary": "#a0d2ab",
+                        "on-surface-variant": "#414942",
+                        "secondary-container": "#fcd57d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c1c9bf",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-container": "#775b0b",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#251a00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary": "#765a0b",
+                        "tertiary-container": "#434033",
+                        "primary-container": "#1b492c",
+                        "on-primary-fixed": "#00210e",
+                        "surface-container": "#f0eded",
+                        "on-tertiary-fixed": "#1e1c10",
+                        "on-tertiary-fixed-variant": "#4a4739",
+                        "surface-tint": "#3a6848",
+                        "on-primary-container": "#87b892",
+                        "primary-fixed": "#bcefc6",
+                        "secondary-fixed-dim": "#e7c26c",
+                        "inverse-surface": "#303030",
+                        "primary": "#003218",
+                        "tertiary-fixed-dim": "#ccc6b4",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "on-surface": "#1b1c1c",
+                        "on-background": "#1b1c1c",
+                        "primary-fixed-dim": "#a0d2ab",
+                        "tertiary-fixed": "#e9e2d0",
+                        "secondary-fixed": "#ffdf9a",
+                        "on-secondary-fixed-variant": "#5a4300",
+                        "surface-variant": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#225032"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "unit": "8px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .editorial-line {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c1c9bf 20%, #c1c9bf 80%, transparent);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full bg-surface z-50 docked full-width top-0 border-b border-outline-variant/10">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="h-16 w-auto flex items-center"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr9uHdFZyf3MiPtn5ifMpjA0ykJHj7ZAYZPqrO6c3DBJ-TAkNIYVFzufklYUSmCb9Bx3cXNQ-CnqH_FtmzFMec8sz986GbpBBQp9wsRAqIw_bNDicmN4UhdFSP3jPcJRIBPsCdIKBHjO1oDXCIPIz2mlAGQY2BTEfrAa5vbTC3GqEqMvv4kfzQ11YSubXjjNZ5UZDqzUaRNHDaurIhi0ApA6NNcQz_uyohzqsE1wdvZuLddu6oTTgKGOQYgbu0axTtHQ" alt="CIEM Santa Hildegarda Logo" class="h-full w-auto object-contain"></div>
+<nav class="hidden md:flex space-x-8">
+<a class="font-body-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-body-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Our Story</a>
+<a class="font-body-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Jewelry</a>
+<a class="font-body-md text-label-md text-primary font-bold border-b-2 border-secondary transition-colors duration-300" href="#">Events</a>
+</nav>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-low transition-colors duration-300 p-2 rounded-full" data-icon="search">search</span>
+<button class="hidden md:block bg-primary-container text-on-primary font-label-md text-label-md px-6 py-2 rounded scale-95 duration-150 ease-in-out hover:bg-primary-fixed-variant hover:text-on-primary-fixed-variant transition-colors">
+                    WhatsApp Catalog
+                </button>
+<span class="material-symbols-outlined md:hidden text-primary cursor-pointer" data-icon="menu">menu</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24">
+<!-- Section Header -->
+<div class="text-center mb-16 md:mb-24">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary-container mb-6">Próximos Encuentros</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Descubra la intersección entre la sabiduría antigua y el bienestar moderno a través de nuestros retiros, talleres y conferencias dedicadas a la obra de Santa Hildegarda de Bingen.
+            </p>
+<div class="editorial-line mt-12 w-3/4 mx-auto"></div>
+</div>
+<!-- Event Grid (Bento/Editorial Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured Event (Large Span) -->
+<article class="md:col-span-12 group relative bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden hover:shadow-[0px_10px_30px_rgba(27,73,44,0.08)] transition-all duration-500">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A serene, light-filled monastic garden in the early morning. Soft, golden hour sunlight filters through ancient oak trees onto a stone pathway. Monastic and organic aesthetic, rich deep greens of foliage contrasting with the warm ochre tones of the stone. High-resolution photography, inviting, peaceful, and sacred atmosphere, conveying a sense of spiritual retreat and natural wellness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsSHUEq4dFL6_XZiBXq7Bw7UOAyVwdu5LFRp_8DqmV0HFPCxiB-pnuCCfPF-PUoypgJ8Tox4TjLoGwk82GEkc4rFKrmJ-2UvVwFsKN53PPiXXBiTonP5lyr4ZpSyGYoBCvvyfU0TfmNNBJ9wO02WjbDUjmXjcgQei7C1UYKTBwqH8wQx3VlePMc1nYwqjuvXrisOaTsUkfbbX5LFUdY409X7OdWBXLztRMq0EH17h7O2odsLrJLl6b">
+</div>
+<div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-surface-container-lowest">
+<div class="flex items-center space-x-2 text-secondary mb-4">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">15 - 17 de Noviembre, 2024</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary-container mb-4">Retiro Espiritual: El Canto del Alma</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
+                            Un fin de semana dedicado a la contemplación, la música hildegardiana y la desconexión total. Experimente la armonía divina a través del canto gregoriano, la meditación en la naturaleza y la alimentación basada en los principios de Santa Hildegarda.
+                        </p>
+<div class="mt-auto">
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-8 py-3 rounded-DEFAULT hover:bg-primary transition-colors duration-300 w-fit">
+                                Información e Inscripción
+                            </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Secondary Event 1 -->
+<article class="md:col-span-6 bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden group hover:shadow-[0px_10px_30px_rgba(27,73,44,0.08)] transition-all duration-500">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A meticulously arranged apothecary table in a bright, sunlit room. Dried herbs, delicate yellow flowers, and glass vials are laid out on a clean, light wood surface. The lighting is soft and natural, emphasizing the organic textures. The color palette features light creams, soft ochre golds, and earthy greens. The mood is clinical yet warm, blending traditional herbalism with modern wellness practices." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhTQxFxU_5cWovxcmVY8BMqzAk61z3h0xlPBiEMMk_pvpumo7ybHikU79w37S1I0QtfLRqJDrhlHwS2wFV-nZRvbQtyH4ZfDC_ju63u3FM6SP9egrNpVO3H0Gus1_2uv9HW3-boWx-2IlDwFavhuxZupwgF7hqah-PHJdqkbVUDV29eIxJFz-c1prCX-_R18JRL_TNCFt5NaNbAD_otHzg3tbRbwKM3kH6iO7hxOKiDTrY_Ch0sjuV">
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded-full border border-secondary/30">
+<span class="font-label-md text-caption text-secondary">Taller</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center space-x-2 text-secondary mb-3">
+<span class="material-symbols-outlined text-sm" data-icon="event">event</span>
+<span class="font-label-md text-caption uppercase tracking-wider">5 de Diciembre, 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary-container mb-3">Medicina Natural: Remedios de Invierno</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                        Aprenda a preparar elixires y bálsamos estacionales basados en los textos de Physica. Un enfoque práctico para fortalecer el sistema inmunológico.
+                    </p>
+<a class="inline-flex items-center text-primary-container font-label-md text-label-md group/link" href="#">
+                        Ver Detalles
+                        <span class="material-symbols-outlined ml-1 group-hover/link:translate-x-1 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+</a>
+</div>
+</article>
+<!-- Secondary Event 2 -->
+<article class="md:col-span-6 bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden group hover:shadow-[0px_10px_30px_rgba(27,73,44,0.08)] transition-all duration-500">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="An elegant, minimalist auditorium setting. An antique manuscript page of Hildegard von Bingen's visions is projected onto a clean white screen behind a simple wooden lectern. The lighting is focused and dramatic, yet the overall room feels bright and contemporary. The aesthetic balances historical reverence with modern academic professionalism, using a palette of deep greens, stark whites, and subtle gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3wfZmxqAQcoExb0GwgMf_5hOGTOjKwjXzt7gO0RZjXVj1os5ymVWiK7B1safdNsCJMULjevuRGaujkM7yPXsp5q2XJRExP1__kfGch9E2VPzZifx0Zk15PXT6aKnIZkBrSvhmlN7d032ntDSuAPVahdrGMYqUvBmzllZyCm37397J-24_BzQhCXHSrF9sLSfheUJ0D4-_k_yGNxXWGmR7rdhNec5Op9K3Hrw7F4yK1TFJWHVOyXIq">
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded-full border border-secondary/30">
+<span class="font-label-md text-caption text-secondary">Conferencia</span>
+</div>
+</div>
+<div class="p-8">
+<div class="flex items-center space-x-2 text-secondary mb-3">
+<span class="material-symbols-outlined text-sm" data-icon="event">event</span>
+<span class="font-label-md text-caption uppercase tracking-wider">12 de Enero, 2025</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary-container mb-3">Simposio: Viriditas en el Siglo XXI</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                        Una exploración académica sobre el concepto de 'Viriditas' (el poder verde que da vida) y su aplicación en la psicología y medicina contemporánea.
+                    </p>
+<a class="inline-flex items-center text-primary-container font-label-md text-label-md group/link" href="#">
+                        Ver Detalles
+                        <span class="material-symbols-outlined ml-1 group-hover/link:translate-x-1 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+</a>
+</div>
+</article>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="border-2 border-secondary text-secondary font-label-md text-label-md px-8 py-3 rounded-DEFAULT hover:bg-secondary hover:text-on-secondary transition-colors duration-300">
+                Ver Calendario Completo
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-highest">
+<div class="w-full py-12 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto">
+<div>
+<div class="font-display-lg text-headline-sm text-primary mb-4">
+                    CIEM Santa Hildegarda
+                </div>
+<p class="font-body-md text-caption text-on-surface-variant">
+                    © 2024 CIEM Santa Hildegarda. Ancient Wisdom, Modern Wellness.
+                </p>
+</div>
+<div class="flex flex-col space-y-2">
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Terms of Service</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Contact Support</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Location</a>
+</div>
+<div class="flex justify-start md:justify-end items-start space-x-4 text-primary">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors" data-icon="mail">mail</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-colors" data-icon="call">call</span>
+</div>
+</div>
+</footer>
+
+
+</body></html>

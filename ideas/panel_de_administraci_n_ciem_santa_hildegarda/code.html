@@ -1,0 +1,395 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dashboard - CIEM Santa Hildegarda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dcd9d9",
+                        "outline": "#717971",
+                        "tertiary": "#2d2a1e",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-container": "#b1ac9b",
+                        "surface": "#fcf9f8",
+                        "background": "#fcf9f8",
+                        "surface-container-high": "#eae7e7",
+                        "inverse-primary": "#a0d2ab",
+                        "on-surface-variant": "#414942",
+                        "secondary-container": "#fcd57d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c1c9bf",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-container": "#775b0b",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#251a00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary": "#765a0b",
+                        "tertiary-container": "#434033",
+                        "primary-container": "#1b492c",
+                        "on-primary-fixed": "#00210e",
+                        "surface-container": "#f0eded",
+                        "on-tertiary-fixed": "#1e1c10",
+                        "on-tertiary-fixed-variant": "#4a4739",
+                        "surface-tint": "#3a6848",
+                        "on-primary-container": "#87b892",
+                        "primary-fixed": "#bcefc6",
+                        "secondary-fixed-dim": "#e7c26c",
+                        "inverse-surface": "#303030",
+                        "primary": "#003218",
+                        "tertiary-fixed-dim": "#ccc6b4",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "on-surface": "#1b1c1c",
+                        "on-background": "#1b1c1c",
+                        "primary-fixed-dim": "#a0d2ab",
+                        "tertiary-fixed": "#e9e2d0",
+                        "secondary-fixed": "#ffdf9a",
+                        "on-secondary-fixed-variant": "#5a4300",
+                        "surface-variant": "#e4e2e1",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#225032"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for table container */
+        .table-scroll::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .table-scroll::-webkit-scrollbar-track {
+            background: theme('colors.surface-container'); 
+        }
+        .table-scroll::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant'); 
+            border-radius: 4px;
+        }
+        .table-scroll::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline'); 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-primary-container dark:bg-tertiary-container text-on-primary-container dark:text-on-tertiary-container docked left-0 h-full w-72 shadow-sm fixed left-0 top-0 h-screen flex flex-col p-6 z-40 hidden md:flex shrink-0">
+<div class="mb-12 flex flex-col items-start gap-4">
+<div class="flex items-center gap-3 w-full border-on-primary-container/20 pb-4">
+<img alt="CIEM Santa Hildegarda Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9UyV4arGW38gp67sqGxiR21syyV8ypHGwdEVIanse4zgoKoX2rWDcJyL20g7Phs9mJYxJ6hEYTazoiYW5w0JGbob4MVgQzPbEX_JdLdqWRpzhpsuebz4GokIVwUC9_nI5jpwv08MqOuiPhr3JvHHBa-WJx2Cs15F3IW052BOLJDXzQw5ypIE55eGvaapyOmP6TmaSrDVJenLS12RluDKIDOFFBUOrCu04La4QdZHeOS-rLFi-IUVtbyNKObh659ut_A">
+<div>
+<h2 class="font-display-lg text-headline-sm text-on-primary-container text-base">Admin Center</h2>
+<p class="font-body-md text-caption text-on-primary-container/80">Product Management</p>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container py-3 px-4 rounded-lg font-label-md flex items-center justify-center gap-2 hover:bg-secondary hover:text-on-secondary transition-colors duration-200">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add New Item
+            </button>
+</div>
+<ul class="flex-1 flex flex-col gap-2 font-body-md text-label-md">
+<li class="">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container/80 hover:bg-primary/10 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container font-bold Active: opacity-90 scale-98 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined filled" data-icon="inventory_2" data-weight="fill">inventory_2</span>
+                    Product Catalog
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container/80 hover:bg-primary/10 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                    Order History
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container/80 hover:bg-primary/10 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+                    Event Management
+                </a>
+</li>
+<li class="">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container/80 hover:bg-primary/10 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<div class="mt-auto pt-6 border-t border-on-primary-container/20">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-primary-container/80 hover:bg-primary/10 font-body-md text-label-md hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Log Out
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-72 bg-surface p-6 md:p-gutter flex flex-col h-full overflow-y-auto">
+<!-- Header -->
+<header class="flex justify-between items-center mb-8 pb-4 border-b border-outline-variant/20">
+<div>
+<h1 class="font-display-lg text-headline-md text-primary mb-1">Product Catalog Management</h1>
+<p class="font-body-md text-on-surface-variant">View, edit, and manage your inventory</p>
+</div>
+<!-- Mobile Menu Toggle (Visible only on mobile) -->
+<button class="md:hidden p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 h-full min-h-0">
+<!-- Main Inventory Section (occupies more space) -->
+<section class="lg:col-span-8 xl:col-span-9 flex flex-col h-full bg-surface-container-lowest rounded-xl border border-primary/10 p-6 shadow-[0px_10px_30px_rgba(27,73,44,0.04)]">
+<!-- Table Controls -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+<div class="relative w-full sm:w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded-lg text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search products..." type="text">
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg text-label-md text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                        </button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="flex-1 overflow-auto table-scroll rounded-lg border border-outline-variant/30">
+<table class="w-full text-left border-collapse min-w-[600px]">
+<thead class="bg-surface-container sticky top-0 z-10">
+<tr>
+<th class="font-label-md text-on-surface-variant p-4 font-semibold border-b border-outline-variant/30">Image</th>
+<th class="font-label-md text-on-surface-variant p-4 font-semibold border-b border-outline-variant/30">Nombre</th>
+<th class="font-label-md text-on-surface-variant p-4 font-semibold border-b border-outline-variant/30">Stock</th>
+<th class="font-label-md text-on-surface-variant p-4 font-semibold border-b border-outline-variant/30">Precio</th>
+<th class="font-label-md text-on-surface-variant p-4 font-semibold border-b border-outline-variant/30 text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-[14px]">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+<td class="p-4">
+<img alt="Product Image" class="w-12 h-12 rounded object-cover border border-outline-variant/20" data-alt="A delicate, handcrafted gold necklace resting on a piece of smooth, dark green velvet. The lighting is focused, highlighting the intricate details of the pendant, which features a subtle botanical motif inspired by St. Hildegard. High-end product photography style, macro shot, soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVdi3eJUkX6mEZrvCQTreriyeYe4j_zParkb1t6cd59TRxHcIZKOFTCwxLu8el3kMuDn6uY8dt0-BOEm2pp8tRmkMTFy7mYskkGdKl5qSwjbmq6KoB1Qn8dGrj8Vmk8VpLFyZ_oBaqwO_GnTK7Uso2PiUn8tBU2RcWbx-dkNqzSxQRbLtOI6XPEGJqQ0rQawA3wYHxlWQHddbn0sO1hbuMkuR-QzUfHPT-FnOvi6BsTwPA-8YBNq9u">
+</td>
+<td class="p-4 font-medium text-on-surface">Collar Herencia Verde</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-container/10 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 24 Und.
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">€ 145.00</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-outline hover:text-primary transition-colors rounded-md hover:bg-primary/5" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-error transition-colors rounded-md hover:bg-error/5" title="Eliminar">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface/50 border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+<td class="p-4">
+<img alt="Product Image" class="w-12 h-12 rounded object-cover border border-outline-variant/20" data-alt="A small, elegant bottle of essential oil made of dark amber glass, standing on a minimalist wooden surface. Beside it is a single sprig of dried lavender. Warm, natural lighting creates a calm and therapeutic atmosphere. Minimalist and luxurious product shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1jemhiNIa1VnNJxB4SXFey0hs6tnQDKgoDDA-alb0HFx8CEGxgGmh5nD0G0tppMLwNDy9XUlV60YD3VsL0vuQiJq6N0ZyS1hoep-avhtz94CnapC8wBhye3bGV53i4WrAJHMFsEHK-dIi7x2gmGDI-NPZQj-0uF-UE3fiBl7DyREkPobMHAb-lHfbP6j_rD9JHhHEhNypq86BDNCwdEXpR00kOTEiH-UBAt7spSddinrvqv7kqXM_">
+</td>
+<td class="p-4 font-medium text-on-surface">Óleo Esencial Lavanda</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary-container/30 text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 8 Und.
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">€ 32.50</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-outline hover:text-primary transition-colors rounded-md hover:bg-primary/5" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-error transition-colors rounded-md hover:bg-error/5" title="Eliminar">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+<td class="p-4">
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center border border-outline-variant/20 text-outline-variant">
+<span class="material-symbols-outlined">image_not_supported</span>
+</div>
+</td>
+<td class="p-4 font-medium text-on-surface">Brazalete Trinitario</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-error/10 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> 0 Und.
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">€ 89.00</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-outline hover:text-primary transition-colors rounded-md hover:bg-primary/5" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-error transition-colors rounded-md hover:bg-error/5" title="Eliminar">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface/50 border-b border-outline-variant/10 hover:bg-surface-container-low transition-colors group">
+<td class="p-4">
+<img alt="Product Image" class="w-12 h-12 rounded object-cover border border-outline-variant/20" data-alt="A beautifully bound journal with a deep green leather cover, embossed with subtle gold geometric patterns. It rests on a clean, white marble surface. A high-quality gold fountain pen lies beside it. The lighting is crisp and modern, highlighting the texture of the materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmdKOa3TovG5nhN9PeLMRTwoApZ6Zsq3WB17bPssAOwqXHqs_74KXCbWRhItxDHzYS-AsYmDhlUksqWR2Lk2epLkWdeXZ1IunugT_OczYnixoVn16PksNP_EUlFPj20ccfIBu7WAt5n0wV4SDL2dbuK5HwoOxLFFj6GiQ1Ngp3oSMAN6k_hRMh3E3INXH4uJ-abpAkgG4PJvd-AwK85rV857RQQwhkoNgBEyEgBHi4CqhymvIwCyZz">
+</td>
+<td class="p-4 font-medium text-on-surface">Diario Espiritual</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-container/10 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 56 Und.
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">€ 45.00</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-outline hover:text-primary transition-colors rounded-md hover:bg-primary/5" title="Editar">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-outline hover:text-error transition-colors rounded-md hover:bg-error/5" title="Eliminar">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 flex justify-between items-center text-caption text-on-surface-variant">
+<span class="">Showing 1 to 4 of 48 entries</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-primary bg-primary text-on-primary transition-colors">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-container transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Sidebar / Widgets Section -->
+<section class="lg:col-span-4 xl:col-span-3 flex flex-col gap-6">
+<!-- Recent Orders Summary -->
+<div class="bg-surface-container-lowest rounded-xl border border-primary/10 p-6 shadow-[0px_10px_30px_rgba(27,73,44,0.04)]">
+<h3 class="font-headline-sm text-lg text-primary mb-4 border-b border-outline-variant/20 pb-2">Resumen de Pedidos</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">#ORD-4921</p>
+<p class="text-caption text-on-surface-variant">Hace 2 horas</p>
+</div>
+</div>
+<span class="font-medium text-sm text-secondary">Pendiente</span>
+</div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">#ORD-4920</p>
+<p class="text-caption text-on-surface-variant">Hace 5 horas</p>
+</div>
+</div>
+<span class="font-medium text-sm text-primary">Enviado</span>
+</div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">#ORD-4919</p>
+<p class="text-caption text-on-surface-variant">Ayer</p>
+</div>
+</div>
+<span class="font-medium text-sm text-primary">Enviado</span>
+</div>
+</div>
+<button class="w-full mt-6 py-2 text-center text-label-md text-primary hover:bg-primary/5 rounded-lg transition-colors border border-transparent hover:border-primary/20">
+                        Ver todos los pedidos
+                    </button>
+</div>
+<!-- Quick Stats -->
+<div class="bg-primary text-on-primary rounded-xl p-6 relative overflow-hidden shadow-lg">
+<!-- Decorative background element -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-secondary/20 rounded-full blur-2xl"></div>
+<h3 class="font-headline-sm text-lg mb-2 relative z-10 text-on-primary">Stock Crítico</h3>
+<div class="flex items-baseline gap-2 relative z-10">
+<span class="font-display-lg text-4xl">12</span>
+<span class="text-sm opacity-80">productos</span>
+</div>
+<p class="text-caption mt-2 opacity-80 relative z-10">Requieren reabastecimiento inmediato.</p>
+</div>
+</section>
+</div>
+</main>
+
+
+</body></html>
