@@ -50,12 +50,20 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="#catalogo"
-          className="hidden md:inline-flex items-center gap-2 bg-primary-container text-on-primary px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide hover:bg-primary transition-colors"
-        >
-          Ver Catálogo
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <Link
+            href="/ingresar"
+            className="inline-flex items-center border border-primary-container text-primary-container px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide hover:bg-primary-container hover:text-on-primary transition-colors"
+          >
+            Ingresar
+          </Link>
+          <a
+            href="#catalogo"
+            className="inline-flex items-center gap-2 bg-primary-container text-on-primary px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide hover:bg-primary transition-colors"
+          >
+            Ver Catálogo
+          </a>
+        </div>
 
         <button
           type="button"
@@ -86,6 +94,12 @@ export default function Navbar() {
           >
             Ver Catálogo
           </a>
+          <Link
+            href="/ingresar"
+            className="inline-flex justify-center items-center border border-primary-container text-primary-container px-6 py-2.5 rounded-full text-sm font-semibold"
+          >
+            Ingresar
+          </Link>
         </div>
       )}
     </nav>

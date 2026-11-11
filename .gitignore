@@ -20,6 +20,12 @@
 # production
 /build
 
+# ideas designs
+/ideas
+
+# logs error
+/logs
+
 # misc
 .DS_Store
 *.pem
