@@ -36,14 +36,14 @@ export const guardarRegistro = async (
   }
   const supabase = await crearClienteServidor();
   const id = formData.get("id");
-  const { error } = id
-    ? await supabase.from(tabla).update(datos).eq("id", String(id))
-    : await supabase.from(tabla).insert(datos);
+  const { data, error } = id
+    ? await supabase.from(tabla).update(datos).eq("id", String(id)).select("id").single()
+    : await supabase.from(tabla).insert(datos).select("id").single();
   if (error) {
     return { error: error.code === "23505" ? "Ya existe un registro con ese valor único" : error.message };
   }
   revalidatePath(ruta);
-  return {};
+  return { id: data.id };
 };
 
 // eliminarRegistro: borra un registro de la tabla indicada (solo administradores)

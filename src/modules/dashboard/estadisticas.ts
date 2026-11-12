@@ -1,4 +1,5 @@
 import { crearClienteServidor } from "@/lib/supabase/server";
+import { estadoEsVenta } from "@/modules/pedidos/estados";
 
 const zonaHoraria = "America/Bogota";
 
@@ -26,7 +27,7 @@ const obtenerClaveDia = (valor: string | Date) => {
 };
 
 // formatearFecha: muestra la fecha del pedido en la zona horaria de Colombia
-const formatearFecha = (valor: string) =>
+export const formatearFecha = (valor: string) =>
   esSoloFecha(valor)
     ? new Date(`${valor}T00:00:00Z`).toLocaleDateString("es-CO", { timeZone: "UTC", dateStyle: "medium" })
     : new Date(valor).toLocaleString("es-CO", { timeZone: zonaHoraria, dateStyle: "medium", timeStyle: "short" });
@@ -53,7 +54,8 @@ export const obtenerEstadisticas = async () => {
   ]);
 
   const pedidos = pedidosRespuesta.data ?? [];
-  const vigentes = pedidos.filter((pedido) => pedido.status !== "cancelled");
+  // Solo los pedidos pagados (confirmado, enviado o entregado) cuentan como ventas
+  const vigentes = pedidos.filter((pedido) => estadoEsVenta(pedido.status));
   const idsVigentes = new Set(vigentes.map((pedido) => pedido.id));
 
   const totalVentas = vigentes.reduce((suma, pedido) => suma + Number(pedido.total_amount), 0);

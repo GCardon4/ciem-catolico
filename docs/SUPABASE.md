@@ -76,6 +76,7 @@ Este esquema soporta múltiples productos por pedido, historial de ventas y esca
 | product_id | int8 | FK → products |
 | image_url  | text | URL imagen    |
 | created_at | date | Fecha         |
+| main       | bool | Defaul=FALSE  |
 
 ---
 

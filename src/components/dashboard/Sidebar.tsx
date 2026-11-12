@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation";
 
 const enlacesPanel = [
   { href: "/dashboard", etiqueta: "Panel Principal" },
+  { href: "/dashboard/pedidos", etiqueta: "Pedidos" },
+  { href: "/dashboard/slider", etiqueta: "Slider" },
   { href: "/dashboard/productos", etiqueta: "Productos" },
   { href: "/dashboard/categorias", etiqueta: "Categorías" },
   { href: "/dashboard/clientes", etiqueta: "Clientes" },

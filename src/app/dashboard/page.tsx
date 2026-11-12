@@ -1,4 +1,5 @@
 import { obtenerEstadisticas } from "@/modules/dashboard/estadisticas";
+import { coloresEstado, esEstadoPedido, etiquetasEstado } from "@/modules/pedidos/estados";
 
 const formatoMoneda = new Intl.NumberFormat("es-CO", {
   style: "currency",
@@ -6,17 +7,6 @@ const formatoMoneda = new Intl.NumberFormat("es-CO", {
   maximumFractionDigits: 0,
 });
 
-const estilosEstado: Record<string, string> = {
-  pending: "text-secondary",
-  confirmed: "text-primary",
-  cancelled: "text-red-700",
-};
-
-const etiquetasEstado: Record<string, string> = {
-  pending: "Pendiente",
-  confirmed: "Confirmado",
-  cancelled: "Cancelado",
-};
 
 export default async function PaginaPanelPrincipal() {
   const estadisticas = await obtenerEstadisticas();
@@ -118,8 +108,8 @@ export default async function PaginaPanelPrincipal() {
                   </div>
                   <div className="text-right shrink-0">
                     <p>{formatoMoneda.format(pedido.total)}</p>
-                    <p className={`text-xs font-medium ${estilosEstado[pedido.estado] ?? ""}`}>
-                      {etiquetasEstado[pedido.estado] ?? pedido.estado}
+                    <p className="text-xs font-medium">
+                      <span className={`px-2 py-0.5 rounded-full ${esEstadoPedido(pedido.estado) ? coloresEstado[pedido.estado] : ""}`}>{esEstadoPedido(pedido.estado) ? etiquetasEstado[pedido.estado] : pedido.estado}</span>
                     </p>
                   </div>
                 </li>

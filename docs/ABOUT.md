@@ -66,3 +66,37 @@ src/
 - **Frontend**: Next.js - React
 - **Backend**: Supabase (Auth, PostgreSQL, Storage)
 - **PWA**: Workbox (configurado)
+
+
+## Contacto
+- **WhatsApp**: 3105059233
+
+
+## Menú Acordeon
+- Santa Hildegarda
+	1.1 Video Podcasts sobre la Santa 
+	1.2 Biografía de la Santa
+	1.3 Obra Musical
+	1.4 Benedicto XVI y la Santa
+	1.5 Fuentes oficiales católicas
+
+- Nuestra Sede
+	2.1 La Ermita (Fotografía y texto corto de dónde está ubicada)
+	2.2 Misión
+	2.3 Visión
+
+- Nuestros productos o Tienda Virtual
+	3.1 Video Podcasts sobre los productos
+	3.2 Catálogo de libros
+	3.3 Catálogo de medicinas 
+	3.4 Catálogo de Bisutería
+
+- Nuestros Retiros Espirituales
+	4.1 Video Podcasts sobre los retiros
+	4.2 Retiros grupales
+	4.3 Retiros individuales
+
+- Glosario Hildegardiano
+- Palabras importantes de la vida y obra de Santa Hildegarda
+
+IMPORTANTE: Mapa de navegación visible - Parte inferior (información logo Benedictinas, página web y sus contactos.

@@ -1,36 +1,33 @@
-import CrudManager from "@/components/dashboard/CrudManager";
+import ProductosManager from "@/components/dashboard/ProductosManager";
 import { crearClienteServidor } from "@/lib/supabase/server";
-import { eliminarProducto, guardarProducto } from "@/modules/productos/actions";
-import { columnasProducto, obtenerCamposProducto } from "@/modules/productos/config";
-import type { FilaCrud } from "@/types/crud";
+import {
+  eliminarImagenProducto,
+  eliminarProducto,
+  guardarProducto,
+  marcarImagenPrincipal,
+  subirImagenProducto,
+} from "@/modules/productos/actions";
+import type { ProductoAdmin } from "@/types/product";
 
 export default async function PaginaProductos() {
   const supabase = await crearClienteServidor();
   const [productosRespuesta, categoriasRespuesta] = await Promise.all([
     supabase
       .from("products")
-      .select("id, name, sku, description, price, stock, category_id")
+      .select("id, name, sku, description, price, stock, category_id, images_product(id, image_url, main)")
       .order("name"),
     supabase.from("category").select("id, name").order("name"),
   ]);
 
-  const categorias = categoriasRespuesta.data ?? [];
-  const nombresCategoria = new Map(categorias.map((categoria) => [categoria.id, categoria.name]));
-  const filas = (productosRespuesta.data ?? []).map((producto) => ({
-    ...producto,
-    categoria: nombresCategoria.get(producto.category_id) ?? null,
-  })) as FilaCrud[];
-
   return (
-    <CrudManager
-      titulo="Productos"
-      subtitulo="Gestiona el catálogo, precios e inventario"
-      singular="producto"
-      filas={filas}
-      columnas={columnasProducto}
-      campos={obtenerCamposProducto(categorias)}
+    <ProductosManager
+      productos={(productosRespuesta.data ?? []) as unknown as ProductoAdmin[]}
+      categorias={categoriasRespuesta.data ?? []}
       guardar={guardarProducto}
       eliminar={eliminarProducto}
+      subirImagen={subirImagenProducto}
+      eliminarImagen={eliminarImagenProducto}
+      marcarPrincipal={marcarImagenPrincipal}
     />
   );
 }

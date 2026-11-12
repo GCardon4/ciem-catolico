@@ -16,6 +16,7 @@ export interface ColumnaCrud {
 
 export interface ResultadoAccion {
   error?: string;
+  id?: string | number;
 }
 
 export type FilaCrud = { id: string | number } & Record<string, string | number | boolean | null>;

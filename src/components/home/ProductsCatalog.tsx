@@ -1,8 +1,8 @@
 import ProductCard from "@/components/home/ProductCard";
-import { obtenerCatalogoDestacado } from "@/modules/products/data";
+import { obtenerProductosPublicos } from "@/modules/products/queries";
 
-export default function ProductsCatalog() {
-  const catalogoDestacado = obtenerCatalogoDestacado();
+export default async function ProductsCatalog() {
+  const productos = await obtenerProductosPublicos();
 
   return (
     <section
@@ -15,9 +15,7 @@ export default function ProductsCatalog() {
             <span className="text-secondary tracking-widest uppercase text-sm font-semibold mb-2 block">
               Artesanía Sagrada
             </span>
-            <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
-              Colección Destacada
-            </h2>
+            <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">Nuestro Catálogo</h2>
             <p className="text-on-surface-variant">
               Piezas elaboradas con devoción, diseñadas para acompañar tu vida
               espiritual con elegancia y significado profundo.
@@ -25,11 +23,17 @@ export default function ProductsCatalog() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {catalogoDestacado.map((producto) => (
-            <ProductCard key={producto.id} producto={producto} />
-          ))}
-        </div>
+        {productos.length === 0 ? (
+          <p className="text-center text-on-surface-variant py-12">
+            Pronto compartiremos nuestras nuevas piezas.
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {productos.map((producto) => (
+              <ProductCard key={producto.id} producto={producto} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

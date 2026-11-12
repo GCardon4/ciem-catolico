@@ -20,13 +20,13 @@ export default function Footer() {
 
         <div className="flex flex-col gap-2 text-sm">
           <span className="font-semibold text-primary mb-1">Navegación</span>
-          <a href="#inicio" className="text-on-surface-variant hover:text-primary transition-colors">
+          <a href="/#inicio" className="text-on-surface-variant hover:text-primary transition-colors">
             Inicio
           </a>
-          <a href="#nuestra-esencia" className="text-on-surface-variant hover:text-primary transition-colors">
+          <a href="/#nuestra-esencia" className="text-on-surface-variant hover:text-primary transition-colors">
             Nuestra Historia
           </a>
-          <a href="#catalogo" className="text-on-surface-variant hover:text-primary transition-colors">
+          <a href="/#catalogo" className="text-on-surface-variant hover:text-primary transition-colors">
             Catálogo
           </a>
         </div>
